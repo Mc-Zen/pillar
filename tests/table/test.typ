@@ -2,14 +2,14 @@
 #import "/src/pillar.typ"
 
 #pillar.table(
-  "lcr",
+  cols: "lcr",
   [ABC], [DEF], [GHI], [J], [K], [L]
 )
 
 #pagebreak()
 
 #pillar.table(
-  "|l|c|r|",
+  cols: "|l|c|r|",
   [ABC], [DEF], [GHI], [J], [K], [L]
 )
 
@@ -18,7 +18,7 @@
 // Check interoperability
 
 #pillar.table(
-  "|lcr|",
+  cols: "|lcr|",
   column-gutter: (5pt),
   [ABC], table.vline(stroke: red), [DEF], [GHI], [J], [K], [L]
 )

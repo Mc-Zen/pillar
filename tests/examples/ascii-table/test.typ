@@ -2,8 +2,8 @@
 #import "/src/pillar.typ"
 
 
-#table(
-  ..pillar.cols("ccc| ccc|[1.8pt + blue] l[5cm]"),
+#pillar.table(
+  cols: "ccc|ccc|[1.8pt + blue] l[5cm]",
   
   [Dec],[Hex],[Bin],[Symbol], [HTML code], [HTML name], [Description],
   table.hline(),

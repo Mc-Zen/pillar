@@ -75,12 +75,14 @@
 
 
 #let table(..children) = {
-  let pos = children.pos()
-  if pos.len() > 0 and type(pos.first()) == str {
+  let named = children.named()
+  if "cols" in named {
+    let colspec = named.cols
+    named.remove("cols")
     return stdtable(
-      ..cols(pos.first()),
-      ..children.named(), 
-      ..pos.slice(1)
+      ..cols(colspec),
+      ..named, 
+      ..children.pos()
     )
   } else { return stdtable(..children) }
 }

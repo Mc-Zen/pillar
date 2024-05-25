@@ -1,7 +1,6 @@
 # Pillar
 
-_Shorthand notations for table column specifications in [Typst](https://
-typst.app/)._
+_Shorthand notations for table column specifications in [Typst](https://typst.app/)._
 
 
 [![Typst Package](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMc-Zen%2Fpillar%2Fmain%2Ftypst.toml&query=%24.package.version&prefix=v&logo=typst&label=package&color=239DAD)](https://typst.app/universe/package/pillar)
@@ -44,7 +43,7 @@ Using **pillar**, the same can be achieved with
 or alternatively 
 ```typ
 #pillar.table(
-    "c|ccc|r",
+    cols: "c|ccc|r",
 
     [Piano Key], [MIDI Number], [Note Name], [Pitch Name], [$f$ in Hz], ..
 )
@@ -92,8 +91,8 @@ Double lines are currently experimental and are realized through column gutters.
 ### Double lines
 The following example uses a double line for visually separating repeated table columns. 
 ```typ
-#table(
-  ..pillar.cols("ccc ||[.7pt] ccc"),
+#pillar.table(
+  cols: "ccc ||[.7pt] ccc",
   
   ..([\#], [$α$ in °], [$β$ in °]) * 2,
   table.hline(),
@@ -112,8 +111,8 @@ The following example uses a double line for visually separating repeated table 
 This example shows the codes of the first ten printable ASCII characters, demonstrating stroke and column width customization. 
 
 ```typ
-#table(
-  ..pillar.cols("ccc|ccc|[1.8pt + blue] l[5cm]"),
+#pillar.table(
+  cols: "ccc|ccc|[1.8pt + blue] l[5cm]",
   
   [Dec],[Hex],[Bin],[Symbol], [HTML code], [HTML name], [Description],
   table.hline(),

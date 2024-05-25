@@ -1,8 +1,8 @@
 #set page(width: auto, height: auto, margin: 1pt)
 #import "/src/pillar.typ"
 
-#table(
-  ..pillar.cols("ccc ||[.7pt] ccc"),
+#pillar.table(
+  cols: "ccc ||[.7pt] ccc",
   
   ..([\#], [$α$ in °], [$β$ in °]) * 2,
   table.hline(),
