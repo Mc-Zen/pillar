@@ -1,6 +1,12 @@
 #set page(width: auto, height: auto, margin: 1pt)
 #import "/src/pillar.typ"
 
+#let clr = if "dark" in sys.inputs { white } else { black }
+#set page(fill: white) if clr == black
+#set text(fill: clr)
+#set table.hline(stroke: clr)
+#set table.vline(stroke: clr)
+
 #pillar.table(
   cols: "ccc ||[.7pt] ccc",
   
