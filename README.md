@@ -11,6 +11,7 @@ _Shorthand notations for table column specifications in [Typst](https://typst.ap
 
 - [Introduction](#introduction)
 - [Column specification](#column-specification)
+- [Number alignment](#number-alignment)
 - [`pillar.cols()`](#pillarcols)
 - [`pillar.table()`](#pillartable)
 - [`vline` customization](#vline-customization)
@@ -18,7 +19,14 @@ _Shorthand notations for table column specifications in [Typst](https://typst.ap
 ## Introduction
 With **pillar**, you can significantly simplify the column setup of tables by unifying the specification of the number, alignment, and separation of columns. This package is in particular designed for scientific tables, which typically have simple styling:
 
-![Table of some piano notes and their names and frequencies](docs/images/piano-keys.svg)
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/piano-keys.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/piano-keys-dark.svg">
+    <img alt="Table of some piano notes and their names and frequencies" src="docs/images/piano-keys.svg">
+  </picture>
+</p>
 
 In order to prepare this table with just the built-in methods, some code like the following would be required.
 ```typ
@@ -66,6 +74,35 @@ A column specification string may contain any number of spaces (e.g., to improve
 
 _If you find yourself writing highly complex column specifications, consider not using this package and resort to the parameters that the built-in tables provide. This package is intended for quick and relatively simple column specifications._
 
+## Number alignment
+
+Choosing capital letters `L`, `C`, `R`, or `A` instead of lower-case letters activates number alignment at the decimal separator for a specific column (similar to the column type "S" of the LaTeX package [siunitx](https://github.com/josephwright/siunitx)). This feature is provided via the Typst package **Zero**. [Here](https://github.com/Mc-Zen/zero) you can read up on the configuration of number formatting. 
+
+```typ
+#let percm = $"cm"^(-1)$
+
+#pillar.table(
+  cols: "l|CCCC",
+  [], [$Δ ν_0$ in #percm], [$B'_ν$ in #percm], [$B''_ν$ in #percm], [$D'_ν$ in #percm],
+  table.hline(),
+  [Measurement], [14525.278],   [1.41],    [1.47],    [1.5e-5],
+  [Uncertainty], [2],           [0.3],     [0.3],     [4e-6],
+  [Ref. [2]],    [14525,74856], [1.37316], [1.43777], [5.401e-6]
+)
+```
+
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/number-alignment.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/number-alignment-dark.svg">
+    <img alt="Number alignment" src="docs/images/number-alignment.svg">
+  </picture>
+</p>
+
+
+Non-number entries (e.g., in the header) are automatically recognized in some cases and will not be aligned. In ambiguous cases, adding a leading or trailing space tells Zero not to apply alignment to this cell, e.g., `[Voltage ]` instead of `[Voltage]`. 
+
 
 ## `pillar.cols()`
 
@@ -104,7 +141,14 @@ The following example uses a double line for visually separating repeated table 
 )
 ```
 
-![Demonstration example using double vertical lines](docs/images/measurement-results.svg)
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/measurement-results.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/measurement-results-dark.svg">
+    <img alt="Demonstration example using double vertical lines" src="docs/images/measurement-results.svg">
+  </picture>
+</p>
 
 ### Further customization
 
@@ -129,7 +173,13 @@ This example shows the codes of the first ten printable ASCII characters, demons
 )
 ```
 
-![Demonstration example using double vertical lines](docs/images/ascii-table.svg)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/ascii-table.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/ascii-table-dark.svg">
+    <img alt="Demonstration example using double vertical lines" src="docs/images/ascii-table.svg">
+  </picture>
+</p>
 
 ## Tests
 This package uses [typst-test](https://github.com/tingerrr/typst-test/) for running [tests](tests/). 
