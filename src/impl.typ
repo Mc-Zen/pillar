@@ -1,3 +1,4 @@
+#import "@preview/zero:0.1.0": ztable
 
 #let stdstroke = stroke
 #let stdtable = table
@@ -6,6 +7,7 @@
   assert(type(spec) == str, message: "expected a `str` argument, got `" + type(spec) + "`")
   
   let aligns = (r: right, c: center, l: left, a: auto)
+  let format = ()
   
   let align = ()
   let columns = ()
@@ -17,8 +19,9 @@
   
   while i < spec.len() {
     let c = spec.at(i)
-    if c in "lcra" {
-      align.push(aligns.at(c))
+    if lower(c) in "lcra" {
+      align.push(aligns.at(lower(c)))
+      format.push(if lower(c) == c { none } else { auto })
       columns.push(auto)
       col += 1
       count-vlines = 0
@@ -62,13 +65,17 @@
     }
     vlines.push(vline(x: col))
   }
+
+  if auto in format { format = (format: format) }
+  else { format = (:) }
   
   arguments(
     columns: columns,
     align: align,
     stroke: none,
     column-gutter: column-gutter,
-    ..vlines
+    ..vlines,
+    ..format
   )
 }
 
@@ -79,7 +86,7 @@
   if "cols" in named {
     let colspec = named.cols
     named.remove("cols")
-    return stdtable(
+    return ztable(
       ..cols(colspec),
       ..named, 
       ..children.pos()
