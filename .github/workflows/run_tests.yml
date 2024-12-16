@@ -5,6 +5,7 @@ on:
     paths:
       - src/**
       - tests/**
+      - .github/**
   pull_request:
     branches: [ main ]
 
