@@ -4,7 +4,7 @@
 #let stdtable = table
 
 #let cols(spec, stroke: auto, line-distance: 1.6pt) = {
-  assert(type(spec) == str, message: "expected a `str` argument, got `" + type(spec) + "`")
+  assert(type(spec) == str, message: "expected a `str` argument, got `" + str(type(spec)) + "`")
   
   let aligns = (r: right, c: center, l: left, a: auto)
   let format = ()
@@ -37,10 +37,10 @@
       let width = eval(spec.slice(i + 1, i + end))
       if count-vlines == 0 {
         assert(columns.len() > 0, message: "Unexpected width specification `" + spec.slice(i, i + end + 1) + "` at the beginning")
-        assert(width == auto or type(width) in (relative, length, fraction), message: "column width expects a relative length, fraction, or auto, found " + type(width))
+        assert(width == auto or type(width) in (relative, length, fraction), message: "column width expects a relative length, fraction, or auto, found " + str(type(width)))
         columns.last() = width
       } else {
-        assert(width == none or type(width) in (length, color, gradient, pattern, dictionary, stdstroke), message: "vline stroke expects a length, color, gradient, pattern, dictionary, stroke, or none, found " + type(width))
+        assert(width == none or type(width) in (length, color, gradient, pattern, dictionary, stdstroke), message: "vline stroke expects a length, color, gradient, pattern, dictionary, stroke, or none, found " + str(type(width)))
         vline-specs.last().last() = width
       }
       i += end
