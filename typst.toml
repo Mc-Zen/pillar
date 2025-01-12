@@ -1,6 +1,6 @@
 [package]
 name = "pillar"
-version = "0.3.0"
+version = "0.3.1"
 entrypoint = "src/pillar.typ"
 authors = ["Mc-Zen <https://github.com/Mc-Zen>"]
 license = "MIT"

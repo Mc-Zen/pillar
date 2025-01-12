@@ -3,7 +3,7 @@
 _Shorthand notations for table column specifications in [Typst](https://typst.app/)._
 
 
-[![Typst Package](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMc-Zen%2Fpillar%2Fv0.3.0%2Ftypst.toml&query=%24.package.version&prefix=v&logo=typst&label=package&color=239DAD)](https://typst.app/universe/package/zero)
+[![Typst Package](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FMc-Zen%2Fpillar%2Fv0.3.1%2Ftypst.toml&query=%24.package.version&prefix=v&logo=typst&label=package&color=239DAD)](https://typst.app/universe/package/zero)
 [![Test Status](https://github.com/Mc-Zen/pillar/actions/workflows/run_tests.yml/badge.svg)](https://github.com/Mc-Zen/pillar/actions/workflows/run_tests.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Mc-Zen/pillar/blob/main/LICENSE)
 
@@ -42,7 +42,7 @@ In order to prepare this table with just the built-in methods, some code like th
 ```
 Using **pillar**, the same can be achieved with 
 ```typ
-#import "@preview/pillar:0.3.0"
+#import "@preview/pillar:0.3.1"
 
 #table(
     ..pillar.cols("c|ccc|r"),
