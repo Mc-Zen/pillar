@@ -3,6 +3,8 @@
 #let stdstroke = stroke
 #let stdtable = table
 
+#let tiling = if sys.version < version(0, 13) { std.pattern } else { std.tiling }
+
 #let cols(spec, stroke: auto, line-distance: 1.6pt) = {
   assert(type(spec) == str, message: "expected a `str` argument, got `" + str(type(spec)) + "`")
   
@@ -40,7 +42,7 @@
         assert(width == auto or type(width) in (relative, length, fraction), message: "column width expects a relative length, fraction, or auto, found " + str(type(width)))
         columns.last() = width
       } else {
-        assert(width == none or type(width) in (length, color, gradient, pattern, dictionary, stdstroke), message: "vline stroke expects a length, color, gradient, pattern, dictionary, stroke, or none, found " + str(type(width)))
+        assert(width == none or type(width) in (length, color, gradient, tiling, dictionary, stdstroke), message: "vline stroke expects a length, color, gradient, tiling, dictionary, stroke, or none, found " + str(type(width)))
         vline-specs.last().last() = width
       }
       i += end
