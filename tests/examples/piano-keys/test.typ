@@ -3,6 +3,7 @@
 
 #let clr = if "dark" in sys.inputs { white } else { black }
 #set page(fill: white) if clr == black
+#set page(fill: none) if clr == white
 #set text(fill: clr)
 #set table.hline(stroke: clr)
 #set table.vline(stroke: clr)
