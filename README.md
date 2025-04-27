@@ -22,16 +22,17 @@ With **pillar**, you can significantly simplify the column setup of tables by un
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="docs/images/piano-keys.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/piano-keys-dark.svg">
-    <img alt="Table of some piano notes and their names and frequencies" src="docs/images/piano-keys.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/ad25fe6e-6ea0-4879-baca-d49977054c0a">
+    <img alt="Table of some piano notes and their names and frequencies" src="https://github.com/user-attachments/assets/120c2d3c-9224-456a-916f-5f850688cde6">
   </picture>
 </p>
+
 
 In order to prepare this table with just the built-in methods, some code like the following would be required.
 ```typ
 #table(
   columns: 5,
+
   align: (center,) * 4 + (right,),
   stroke: none,
 
@@ -93,12 +94,10 @@ Choosing capital letters `L`, `C`, `R`, or `A` instead of lower-case letters act
 )
 ```
 
-
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="docs/images/number-alignment.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/number-alignment-dark.svg">
-    <img alt="Number alignment" src="docs/images/number-alignment.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/c3c8edbf-432f-41ff-a93b-32e68c8f23af">
+    <img alt="Number alignment" src="https://github.com/user-attachments/assets/6f751897-91a8-46fe-9849-e3e08ee8b08d">
   </picture>
 </p>
 
@@ -146,9 +145,8 @@ The following example uses a double line for visually separating repeated table 
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="docs/images/measurement-results.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/measurement-results-dark.svg">
-    <img alt="Demonstration example using double vertical lines" src="docs/images/measurement-results.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/b2796b82-f46b-45a6-88b5-8ee57b126a80">
+    <img alt="Demonstration example using double vertical lines" src="https://github.com/user-attachments/assets/6d32f969-f6bb-48fe-be70-bcc0c49a4f48">
   </picture>
 </p>
 
@@ -157,6 +155,7 @@ The following example uses a double line for visually separating repeated table 
 This example shows the codes of the first ten printable ASCII characters, demonstrating stroke and column width customization. 
 
 ```typ
+
 #pillar.table(
   cols: "ccc|ccc|[1.8pt + blue] l[5cm]",
   
@@ -177,9 +176,8 @@ This example shows the codes of the first ten printable ASCII characters, demons
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="docs/images/ascii-table.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/ascii-table-dark.svg">
-    <img alt="Demonstration example using double vertical lines" src="docs/images/ascii-table.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/40b732e5-3072-49e5-94e3-4af9993887cc">
+    <img alt="Demonstration example using double vertical lines" src="https://github.com/user-attachments/assets/b126cf2e-1516-4fda-b38f-2b0cb3388654">
   </picture>
 </p>
 
